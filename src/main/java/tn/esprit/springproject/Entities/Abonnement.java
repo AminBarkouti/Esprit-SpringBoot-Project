@@ -19,4 +19,7 @@ public class Abonnement {
 
     @Enumerated(EnumType.STRING)
     private TypeAbonnement typeAbon;
+
+    @OneToOne
+    private Skieur skieur ;
 }

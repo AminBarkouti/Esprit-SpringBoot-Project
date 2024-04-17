@@ -13,4 +13,9 @@ public class Inscription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numInscription;
     private int numSemaine;
+
+    @ManyToOne
+    private Skieur skieur;
+    @ManyToOne
+    private Cours cours;
 }

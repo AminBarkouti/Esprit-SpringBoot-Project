@@ -1,8 +1,12 @@
 package tn.esprit.springproject.Entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @Getter
@@ -20,5 +24,12 @@ public class Cours {
 
     @Enumerated(EnumType.STRING)
     private TypeCours typeCours;
+
+    @OneToMany(mappedBy = "cours")
+    @JsonIgnore
+    List<Inscription> inscriptionsList;
+
+    @OneToMany
+    List<Moniteur>moniteurList;
 
 }
