@@ -24,8 +24,8 @@ public class SkieurController {
         return skieurService.assignSkieurToPiste(numSkieur,numPiste);
     }
 
-    @PutMapping("/addPiste/{numPiste}/{numSkieur}")
-    public Piste disafectSkieur(@PathVariable("numPiste") Long numPiste, @PathVariable("numSkieur") Long numSkieur)
+    @PutMapping("/addPiste/{numSkieur}/{numPiste}")
+    public Piste disafectSkieur(@PathVariable("numSkieur") Long numSkieur, @PathVariable("numPiste") Long numPiste)
     {
         return skieurService.disafectSkieur(numSkieur,numPiste);
     }
