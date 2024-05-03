@@ -21,9 +21,12 @@ public class Skieur {
     private String Ville;
 
     @ManyToMany(mappedBy = "skieurList")
-    List<Piste>pisteList;
+    private List<Piste> pisteList;
+
+    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+    private Abonnement abonnement;
 
     @OneToMany(mappedBy ="skieur")
     @JsonIgnore
-    List<Inscription>inscriptionsList;
+    private List<Inscription> inscriptionsList;
 }

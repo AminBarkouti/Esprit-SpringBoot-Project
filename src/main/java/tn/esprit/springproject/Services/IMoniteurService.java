@@ -10,4 +10,7 @@ public interface IMoniteurService {
     Moniteur updateMoniteur (Moniteur moniteur);
     Moniteur retrieveMoniteur (Long numMoniteur);
     Moniteur findByNom(String nom);
+
+    public String deleteMoniteur (Long id);
+    public Moniteur addInstructorAndAssignToCourse(Moniteur moniteur, Long numCourse);
 }

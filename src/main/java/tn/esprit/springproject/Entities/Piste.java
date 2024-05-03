@@ -21,5 +21,5 @@ public class Piste {
     private Integer pente;
 
     @ManyToMany
-    List<Skieur> skieurList;
+    private List<Skieur> skieurList;
 }

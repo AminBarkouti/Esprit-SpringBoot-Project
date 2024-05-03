@@ -27,9 +27,8 @@ public class Cours {
 
     @OneToMany(mappedBy = "cours")
     @JsonIgnore
-    List<Inscription> inscriptionsList;
+    private List<Inscription> inscriptionsList;
 
-    @OneToMany
-    List<Moniteur>moniteurList;
-
+    @ManyToOne
+    private Moniteur moniteur;
 }

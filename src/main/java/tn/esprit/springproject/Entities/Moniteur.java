@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -17,4 +18,6 @@ public class Moniteur {
     private String prenomM;
     private LocalDate dateRecu;
 
+    @OneToMany
+    private List<Cours> cours;
 }
