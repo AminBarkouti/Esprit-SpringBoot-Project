@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.springproject.Entities.Cours;
 import tn.esprit.springproject.Entities.Inscription;
+import tn.esprit.springproject.Entities.Skieur;
 import tn.esprit.springproject.Services.ICoursService;
 
 import java.util.List;
@@ -37,7 +38,17 @@ public class CoursController {
 
     @PutMapping("/edit/{ins}/{cours}")
     public Inscription assignInscriptionToCours (@PathVariable("ins")Long numRegistration, @PathVariable("cours")Long numCours){
-        return coursService.assignInscriptionToCours(numRegistration,numCours);
+        return coursService.assignRegistrationToCourse(numRegistration,numCours);
+    }
+
+    @PostMapping("/add/{cours}/{skieur}")
+    public Inscription addRegistrationAndAssignToSkierAndCourse(@RequestBody Inscription inscription, @PathVariable("skieur") Long numSkieur, @PathVariable("cours") Long numCours){
+        return coursService.addRegistrationAndAssignToSkierAndCourse(inscription,numSkieur,numCours);
+    }
+
+    @PostMapping("/add/{cours}")
+    public Skieur addSkierAndAssignToCourse(@RequestBody Skieur skieur, @PathVariable("cours") Long numCours) {
+        return coursService.addSkierAndAssignToCourse(skieur,numCours);
     }
 
     @PutMapping("/disafecte/{insc}/{cour}")
