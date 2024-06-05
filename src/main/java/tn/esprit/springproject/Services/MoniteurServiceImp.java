@@ -50,7 +50,7 @@ public class MoniteurServiceImp implements IMoniteurService{
     @Override
     public String deleteMoniteur(Long id) {
         moniteurRepo.deleteById(id);
-        return "moniteur supprimé";
+            return "moniteur supprimé";
     }
 
     @Override

@@ -23,7 +23,7 @@ public class Skieur {
     @ManyToMany(mappedBy = "skieurList")
     private List<Piste> pisteList;
 
-    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})  //persist pour ajouter un abonnement au moment en ajout skieur
     private Abonnement abonnement;
 
     @OneToMany(mappedBy ="skieur")

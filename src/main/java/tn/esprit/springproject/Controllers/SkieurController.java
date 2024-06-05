@@ -7,6 +7,8 @@ import tn.esprit.springproject.Entities.Piste;
 import tn.esprit.springproject.Entities.Skieur;
 import tn.esprit.springproject.Services.ISkieurService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/Skieur")
 public class SkieurController {
@@ -28,5 +30,9 @@ public class SkieurController {
     public Piste disafectSkieur(@PathVariable("numSkieur") Long numSkieur, @PathVariable("numPiste") Long numPiste)
     {
         return skieurService.disafectSkieur(numSkieur,numPiste);
+    }
+    @GetMapping("/get/{nomS}")
+    public List<Inscription> getInscriptionByNomSkIEUR(@PathVariable("nomS") String nom){
+        return skieurService.getInscriptionByNomSkIEUR(nom);
     }
 }

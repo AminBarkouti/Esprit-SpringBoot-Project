@@ -45,4 +45,9 @@ public class SkieurServiceImp implements ISkieurService{
         piste.getSkieurList().remove(skieur);
         return pisteRepo.save(piste);
     }
+
+    @Override
+    public List<Inscription> getInscriptionByNomSkIEUR(String nom) {
+        return  inscriptionRepo.getInscriptionByNomSkieur(nom);
+    }
 }
